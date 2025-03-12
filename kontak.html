@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Kami - PSB 2024</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Logo styles */
+        .nav-logo {
+            width: 80px !important;
+            height: 80px !important;
+            object-fit: contain !important;
+        }
+
+        .contact-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-form {
+            padding: 2rem;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .contact-info-card {
+            padding: 2rem;
+            background: #f9f9f9;
+            border-radius: 10px;
+            height: fit-content;
+        }
+
+        .contact-method {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .contact-method:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .contact-method h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-method p {
+            margin: 0.5rem 0;
+            color: #666;
+        }
+
+        .social-media-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-media-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: white;
+            border-radius: 5px;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .social-media-link:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .map-container {
+            margin-top: 2rem;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-submit,
+        .btn-reset {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .btn-reset {
+            background-color: #e0e0e0;
+            color: var(--text-color);
+        }
+
+        .btn-reset:hover {
+            background-color: #d0d0d0;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <img id="navLogoPreview" src="#" alt="Logo Sekolah" class="nav-logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                <li><a href="info.html">Informasi</a></li>
+                <li><a href="alur.html">Alur Pendaftaran</a></li>
+                <li><a href="kontak.html" class="active">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="page-header">
+            <h1>Hubungi Kami</h1>
+            <p>Kami siap membantu Anda</p>
+        </header>
+
+        <div class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <h2>Kirim Pesan</h2>
+                    <form id="contactForm" onsubmit="return validateContactForm()">
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap</label>
+                            <input type="text" id="nama" name="nama" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telepon">Nomor Telepon</label>
+                            <input type="tel" id="telepon" name="telepon" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subjek">Subjek</label>
+                            <select id="subjek" name="subjek" required>
+                                <option value="">Pilih Subjek</option>
+                                <option value="info">Informasi Pendaftaran</option>
+                                <option value="biaya">Informasi Biaya</option>
+                                <option value="beasiswa">Program Beasiswa</option>
+                                <option value="lainnya">Lainnya</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pesan">Pesan</label>
+                            <textarea id="pesan" name="pesan" required></textarea>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="submit" class="btn-submit">Kirim Pesan</button>
+                            <button type="reset" class="btn-reset">Reset</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="contact-info-card">
+                    <h2>Informasi Kontak</h2>
+                    
+                    <div class="contact-method">
+                        <h3>📍 Alamat</h3>
+                        <p>Jl. KH. Abd. Mu'iz Tr</p>
+                        <p>Koncer Darul Aman - Tenggarang - Bondowoso</p>
+                        <p>Kode Pos: 68271</p>
+                    </div>
+
+                    <div class="contact-method">
+                        <h3>📞 Telepon & WhatsApp</h3>
+                        <p>Telp: (021) 1234567</p>
+                        <p>WA: 0812-3456-7890</p>
+                    </div>
+
+                    <div class="contact-method">
+                        <h3>✉️ Email</h3>
+                        <p>minurulhuda102@gmail.com</p>
+
+                    </div>
+
+                    <div class="contact-method">
+                        <h3>⏰ Jam Operasional</h3>
+                        <p>Senin - Kamis: 08.00 - 12.00</p>
+                    </div>
+
+                    <div class="contact-method">
+                        <h3>📱 Media Sosial</h3>
+                        <div class="social-media-links">
+                            <a href="#" class="social-media-link">
+                                <span>Facebook</span>
+                            </a>
+                            <a href="#" class="social-media-link">
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" class="social-media-link">
+                                <span>Twitter</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6664463317306!2d106.82795931476882!3d-6.175392395527383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sMonumen%20Nasional!5m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Kontak Kami</h3>
+                    <p>Email: minurulhuda102@gmail.com</p>
+                    <p>Telepon: (021) 1234567</p>
+                    <p>WhatsApp: 0812-3456-7890</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="pendaftaran.html">Formulir Pendaftaran</a></li>
+                        <li><a href="info.html">Informasi PSB</a></li>
+                        <li><a href="alur.html">Alur Pendaftaran</a></li>
+                        <li><a href="kontak.html">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ikuti Kami</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Portal PSB. Hak Cipta Dilindungi.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function validateContactForm() {
+            const nama = document.getElementById('nama').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const telepon = document.getElementById('telepon').value.trim();
+            const pesan = document.getElementById('pesan').value.trim();
+
+            // Validasi nama
+            if (nama.length < 3) {
+                alert('Nama harus minimal 3 karakter!');
+                return false;
+            }
+
+            // Validasi email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Format email tidak valid!');
+                return false;
+            }
+
+            // Validasi nomor telepon
+            const phoneRegex = /^[0-9]{10,13}$/;
+            if (!phoneRegex.test(telepon)) {
+                alert('Nomor telepon tidak valid! Harus 10-13 digit angka.');
+                return false;
+            }
+
+            // Validasi pesan
+            if (pesan.length < 10) {
+                alert('Pesan terlalu pendek! Minimal 10 karakter.');
+                return false;
+            }
+
+            // Jika semua validasi berhasil
+            alert('Pesan Anda telah terkirim! Kami akan segera menghubungi Anda.');
+            return true;
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alur Pendaftaran - PSB 2024</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Logo styles */
+        .nav-logo {
+            width: 80px !important;
+            height: 80px !important;
+            object-fit: contain !important;
+        }
+
+        .alur-section {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .alur-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .alur-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary-color);
+            top: 0;
+        }
+
+        .alur-step {
+            position: relative;
+            margin-bottom: 3rem;
+            width: calc(50% - 30px);
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .alur-step::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            top: 50%;
+        }
+
+        .alur-step:nth-child(odd) {
+            margin-left: auto;
+            padding-left: 2rem;
+        }
+
+        .alur-step:nth-child(odd)::before {
+            left: -40px;
+            transform: translateY(-50%);
+        }
+
+        .alur-step:nth-child(even) {
+            padding-right: 2rem;
+        }
+
+        .alur-step:nth-child(even)::before {
+            right: -40px;
+            transform: translateY(-50%);
+        }
+
+        .alur-step h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .alur-step p {
+            margin-bottom: 1rem;
+        }
+
+        .alur-step .step-number {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 30px;
+            height: 30px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .document-list {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .document-list ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .document-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .document-list li::before {
+            content: '✓';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .alur-timeline::before {
+                left: 30px;
+            }
+
+            .alur-step {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+                padding: 1.5rem !important;
+            }
+
+            .alur-step::before {
+                left: -45px !important;
+                right: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container">
+                <img id="navLogoPreview" src="#" alt="Logo Sekolah" class="nav-logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                <li><a href="info.html">Informasi</a></li>
+                <li><a href="alur.html" class="active">Alur Pendaftaran</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="page-header">
+            <h1>Alur Pendaftaran Siswa Baru</h1>
+            <p>Tahun Ajaran 2024/2025</p>
+        </header>
+
+        <section class="alur-section">
+            <div class="alur-timeline">
+                <div class="alur-step">
+                    <div class="step-number">1</div>
+                    <h3>Persiapan Dokumen</h3>
+                    <p>Siapkan dokumen-dokumen yang diperlukan untuk pendaftaran:</p>
+                    <div class="document-list">
+                        <ul>
+                            <li>Fotokopi Akta Kelahiran</li>
+                            <li>Fotokopi Kartu Keluarga</li>
+                            <li>Fotokopi Rapor (3 semester terakhir)</li>
+                            <li>Pas Foto 3x4 (latar belakang merah)</li>
+                            <li>Fotokopi KTP Orang Tua/Wali</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alur-step">
+                    <div class="step-number">2</div>
+                    <h3>Pendaftaran Online</h3>
+                    <p>Lakukan pendaftaran online melalui website dengan mengisi formulir yang telah disediakan. Upload semua dokumen yang diperlukan dalam format digital.</p>
+                    <p>Pastikan semua data diisi dengan benar dan lengkap.</p>
+                </div>
+
+                <div class="alur-step">
+                    <div class="step-number">3</div>
+                    <h3>Pembayaran Biaya Pendaftaran</h3>
+                    <p>Lakukan pembayaran biaya pendaftaran melalui rekening sekolah:</p>
+                    <div class="document-list">
+                        <ul>
+                            <li>Bank BRI: 1234-5678-9012-3456</li>
+                            <li>Bank BNI: 9876-5432-1098-7654</li>
+                            <li>Nominal: Rp 300.000</li>
+                        </ul>
+                    </div>
+                    <p>Simpan bukti pembayaran untuk verifikasi.</p>
+                </div>
+
+                <div class="alur-step">
+                    <div class="step-number">4</div>
+                    <h3>Verifikasi Berkas</h3>
+                    <p>Tim PSB akan melakukan verifikasi terhadap berkas-berkas yang telah diupload. Proses verifikasi membutuhkan waktu 2-3 hari kerja.</p>
+                </div>
+
+                <div class="alur-step">
+                    <div class="step-number">5</div>
+                    <h3>Tes Seleksi</h3>
+                    <p>Calon siswa mengikuti tes seleksi yang terdiri dari:</p>
+                    <div class="document-list">
+                        <ul>
+                            <li>Tes Akademik</li>
+                            <li>Tes Baca Al-Qur'an</li>
+                            <li>Wawancara</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alur-step">
+                    <div class="step-number">6</div>
+                    <h3>Pengumuman Hasil</h3>
+                    <p>Hasil seleksi akan diumumkan melalui website dan email yang didaftarkan. Pengumuman dilakukan maksimal 7 hari setelah tes seleksi.</p>
+                </div>
+
+                <div class="alur-step">
+                    <div class="step-number">7</div>
+                    <h3>Daftar Ulang</h3>
+                    <p>Bagi calon siswa yang diterima, lakukan daftar ulang dengan melengkapi:</p>
+                    <div class="document-list">
+                        <ul>
+                            <li>Pembayaran biaya daftar ulang</li>
+                            <li>Penyerahan dokumen asli</li>
+                            <li>Pengukuran seragam</li>
+                            <li>Penandatanganan surat pernyataan</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="alur-section" style="margin-top: 2rem;">
+            <h2>Catatan Penting:</h2>
+            <div class="document-list">
+                <ul>
+                    <li>Semua berkas yang diupload harus jelas dan mudah dibaca</li>
+                    <li>Pembayaran harus dilakukan maksimal 24 jam setelah pendaftaran online</li>
+                    <li>Daftar ulang dilakukan maksimal 7 hari setelah pengumuman</li>
+                    <li>Jika ada kendala dalam proses pendaftaran, silakan hubungi contact center kami</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Kontak Kami</h3>
+                    <p>Email: info@sekolah.ac.id</p>
+                    <p>Telepon: (021) 1234567</p>
+                    <p>WhatsApp: 0812-3456-7890</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="pendaftaran.html">Formulir Pendaftaran</a></li>
+                        <li><a href="info.html">Informasi PSB</a></li>
+                        <li><a href="alur.html">Alur Pendaftaran</a></li>
+                        <li><a href="kontak.html">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ikuti Kami</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Portal PSB. Hak Cipta Dilindungi.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
